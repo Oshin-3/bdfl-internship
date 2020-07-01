@@ -36,3 +36,19 @@ th{
 	
 }
 
+.details-container{
+	background-color: #ccc;
+}
+
+
+.details-label{
+	width: 300px;
+	font-weight: bold;
+	text-align: left;
+}
+
+.details-content{
+	width: 650px;
+	padding: 5px;
+}
+
