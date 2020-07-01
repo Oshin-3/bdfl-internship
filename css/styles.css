@@ -31,24 +31,10 @@ input[type="text"], input[type="password"]{
 	border-left: 7px solid #800000;
 }
 
-th{
+table th{
 	text-align: center;
-	
 }
 
 .details-container{
 	background-color: #ccc;
 }
-
-
-.details-label{
-	width: 300px;
-	font-weight: bold;
-	text-align: left;
-}
-
-.details-content{
-	width: 650px;
-	padding: 5px;
-}
-
