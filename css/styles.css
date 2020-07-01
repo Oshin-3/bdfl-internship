@@ -1,0 +1,28 @@
+.login-container{
+	background-color: #ccc;
+}
+
+.login-content{
+	background-color: #ffffff;
+	margin-top: 30px;
+	padding: 20px 10px 10px 10px;
+	box-sizing: border-box;
+	border: 1px solid #ccc;
+	margin-bottom: 10px;
+}
+
+form{
+	margin-top: 20px;
+}
+
+h5{
+	text-align: center;
+}
+
+::placeholder{
+	text-align: center;
+}
+
+input[type="text"], input[type="password"]{
+	border-left: 7px solid #800000;
+}
