@@ -1,3 +1,7 @@
+.row-content{
+	margin: 20px;
+}
+
 .login-container{
 	background-color: #ccc;
 }
@@ -26,3 +30,9 @@ h5{
 input[type="text"], input[type="password"]{
 	border-left: 7px solid #800000;
 }
+
+th{
+	text-align: center;
+	
+}
+
