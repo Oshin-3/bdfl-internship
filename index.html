@@ -15,12 +15,12 @@
 </head>
 <body>
 	<div class="container">
-		<div class="row row-content">
-			<div class="login-container col-12 col-sm-6 offset-sm-3">
+		<div class="row login-container col-12 col-sm-6 offset-sm-3 containers">
+			<div class=" col-12">
 				<h5 class="text-white">APPLICATION TITLE</h5>
 				<div class="login-content">
 					<h5 class="text-primary">LOGIN TO CONTINUE</h5>
-					<form>
+					<form class="login-form">
 						<div class="form-group">
 							<input type="text" name="username" id="username" class="form-input col-10 offset-1" placeholder="Username">
 						</div>
@@ -28,18 +28,19 @@
 							<input type="password" name="password" id="password" class="form-input col-10 offset-1" placeholder="Password">
 						</div>
 						<div class="form-group">
-							<input type="submit" name="submit" value="LOGIN" class="btn btn-primary col-10 offset-1">
+							<input type="submit" name="submit" value="LOGIN" class="btn btn-primary col-10 offset-1 login-btn">
 						</div>
 					</form>
 				</div>
 			</div>
 		</div>
 
-		<div class="row row-content">
-			<div class="table-container col-12 col-sm-12">
+		<div class="row table-container containers">
+			<div class=" col-12 col-sm-12">
 				<table class="table table-responsive table-striped table-bordered">
 					<thead class="bg-info text-white">
 						<tr>
+							<th>Request ID</th>
 							<th>Project Name</th>
 							<th>Project Manager</th>
 							<th>No. of Resources</th>
@@ -56,7 +57,7 @@
 			</div>
 		</div>
 
-		<div class="row row-content">
+		<div class="row containers">
 			<div class="details-container col-12 col-sm-6">
 				<label class="label">Project Name</label>
 				<label>:Project 1</label><br>
@@ -95,9 +96,9 @@
 		</div>
 
 		
-		<form class="outer-form">
-			<div class="row row-content">
-				<div class="form-container col-sm-6">
+		<form class="form-container containers">
+			<div class="row">
+				<div class="inner-form col-sm-6">
 					
 						<div class="form-group">
 							<label for="projectname" class="label">Project Name</label>
@@ -147,7 +148,7 @@
 						</div>
 				</div>
 
-				<div class="form-container col-sm-6">
+				<div class="inner-form col-sm-6">
 					<div class="form-group">
 							<label for="skills" class="label">Required Skills</label>
 							: <input type="text" name="skills" id="skills" class="form-input col-6">
@@ -188,5 +189,7 @@
 		
 		
 	</div>
+
+	<script type="text/javascript" src="js/index.js"></script>
 </body>
 </html>

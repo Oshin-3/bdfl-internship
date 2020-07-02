@@ -1,4 +1,4 @@
-.row-content{
+.containers{
 	margin: 20px;
 }
 
@@ -42,7 +42,7 @@ table th{
 	width: 200px;
 }
 
-.form-container{
+.inner-form{
 	padding: 15px;
 }
 
