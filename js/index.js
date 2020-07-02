@@ -25,6 +25,11 @@ $(function(){
 	}
 
 	//showForm();
+	function showDetails(){
+		hideAll();
+		$(".details-container").show();
+	}
 
+	//showDetails();
 	showLogin();
 });
