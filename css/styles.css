@@ -37,4 +37,10 @@ table th{
 
 .details-container{
 	background-color: #ccc;
+	padding: 15px;
+}
+
+.details-label{
+	font-weight: bold;
+	width: 300px;
 }
