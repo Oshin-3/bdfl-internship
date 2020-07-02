@@ -27,9 +27,6 @@ h5{
 	text-align: center;
 }
 
-input[type="text"], input[type="password"]{
-	border-left: 7px solid #800000;
-}
 
 table th{
 	text-align: center;
@@ -40,7 +37,23 @@ table th{
 	padding: 15px;
 }
 
-.details-label{
+.label{
 	font-weight: bold;
-	width: 300px;
+	width: 200px;
+}
+
+.form-container{
+	padding: 15px;
+}
+
+.form-input{
+	border: 1px solid #ccc;
+	border-left: 6px solid #800000;
+	border-radius: 5px;
+	padding: 5px;
+}
+
+.form-button{
+	position: relative;
+	left: 1000px;
 }
