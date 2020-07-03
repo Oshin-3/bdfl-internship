@@ -58,6 +58,12 @@ function showDetails(){
 	$(".details-module").show();
 }
 
+function editDetails(e){
+	var $req = $(e.target);
+	var reqId = $req.attr("id");
+	console.log("request Id: " + reqId);
+}
+
 function showTable(){
 	
  	hideAll();
@@ -66,7 +72,7 @@ function showTable(){
   {
     var rowData = data[i];
     $("table tbody").append(`
-    		<tr>
+    		<tr class="tablerow">
     			<td>${rowData["requestId"]}</td>
     			<td>${rowData["projectname"]}</td>
     			<td>${rowData["projectmanager"]}</td>
@@ -75,9 +81,10 @@ function showTable(){
     			<td>${rowData["poc"]}</td>
     			<td>${rowData["hiring-status"]}</td>
     			<td>${rowData["hr-omments"]}</td>
-    			<td>${rowData["actions"]}</td>
+    			<td id="${rowData["requestId"]}" class="edit-action"><input type="button" value="Action"></td>
     		</tr>
     	`);
+    $(".edit-action").click(editDetails);
   }
 }
 
