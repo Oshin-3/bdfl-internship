@@ -15,17 +15,17 @@
 </head>
 <body>
 	<div class="container">
-		<div class="row login-container col-12 col-sm-6 offset-sm-3 containers">
+		<div class="row login-module module col-12 col-sm-6 offset-sm-3">
 			<div class=" col-12">
 				<h5 class="text-white">APPLICATION TITLE</h5>
 				<div class="login-content">
 					<h5 class="text-primary">LOGIN TO CONTINUE</h5>
 					<form class="login-form">
 						<div class="form-group">
-							<input type="text" name="username" id="username" class="form-input col-10 offset-1" placeholder="Username">
+							<input type="text" name="username" id="username" class="form-input col-10 offset-1" placeholder="Username" required>
 						</div>
 						<div class="form-group">
-							<input type="password" name="password" id="password" class="form-input col-10 offset-1" placeholder="Password">
+							<input type="password" name="password" id="password" class="form-input col-10 offset-1" placeholder="Password" required>
 						</div>
 						<div class="form-group">
 							<input type="submit" name="submit" value="LOGIN" class="btn btn-primary col-10 offset-1 login-btn">
@@ -35,8 +35,8 @@
 			</div>
 		</div>
 
-		<div class="row table-container containers">
-			<div class="col-12 col-sm-12">
+		<div class="row table-module module">
+			<div class="col-12 ">
 				<table class="table table-responsive table-striped table-bordered">
 					<thead class="bg-info text-white">
 						<tr>
@@ -57,7 +57,7 @@
 			</div>
 		</div>
 
-		<div class="row details-container containers">
+		<div class="row details-module module">
 			<div class="details-content col-12 col-sm-6">
 				<label class="label">Project Name</label>
 				<label>:Project 1</label><br>
@@ -96,98 +96,95 @@
 		</div>
 
 		
-		<form class="form-container containers">
+		<form class="form-module module">
 			<div class="row">
 				<div class="inner-form col-sm-6">
 					
-						<div class="form-group">
-							<label for="projectname" class="label">Project Name</label>
-							: <select id="projectname" class="form-input col-6">
-								<option value=""></option>
-								<option value="project1">Project 1</option>
-								<option value="project2">Project 2</option>
-								<option value="project3">Project 3</option>
-							  </select>
-						</div>
-						<div class="form-group">
-							<label for="projectmanager" class="label">Project Manager</label>
-							: <input type="text" name="projectmanager" id="projectmanager" class="form-input col-6">
-						</div>
-						<div class="form-group">
-							<label for="resources" class="label">No. of Resources</label>
-							: <input type="number" name="resources" id="resources" class="form-input col-6">
-						</div>
-						<div class="form-group">
-							<label for="designation" class="label">Designation</label>
-							: <input type="text" name="designation" id="designation" class="form-input col-6">
-						</div>
-						<div class="form-group">
-							<label for="status" class="label">Status</label>
-							: <select id="status" class="form-input col-6">
-								<option value="open">Open</option>
-								<option value="project1">New </option>
-							  </select>
-						</div>
-						<div class="form-group">
-							<label for="min-experience" class="label">Minimum Experience</label>
-							: <input type="text" name="min-experience" id="min-experience" class="form-input col-2"> years
-							<input type="text" name="min-experience" id="min-experience" class="form-input col-2"> months
-						</div>
-						<div class="form-group">
-							<label for="max-experience" class="label">Maximum Experience</label>
-							: <input type="text" name="max-experience" id="max-experience" class="form-input col-2"> years
-							<input type="text" name="max-experience" id="max-experience" class="form-input col-2"> months
-						</div>
-						<div class="form-group">
-							<label for="type" class="label">Status</label>
-							: <select id="type" class="form-input col-6">
-								<option value=""></option>
-								<option value="New">New</option>
-								<option value="replacement">Replacement</option>
-							  </select>
-						</div>
+					<div class="form-group">
+						<label for="projectname" class="label">Project Name</label>
+						: <select id="projectname" class="form-input col-7">
+							<option value=""></option>
+							<option value="project1">Project 1</option>
+							<option value="project2">Project 2</option>
+							<option value="project3">Project 3</option>
+						  </select>
+					</div>
+					<div class="form-group">
+						<label for="projectmanager" class="label">Project Manager</label>
+						: <input type="text" name="projectmanager" id="projectmanager" class="form-input col-7">
+					</div>
+					<div class="form-group">
+						<label for="resources" class="label">No. of Resources</label>
+						: <input type="number" name="resources" id="resources" class="form-input col-7">
+					</div>
+					<div class="form-group">
+						<label for="designation" class="label">Designation</label>
+						: <input type="text" name="designation" id="designation" class="form-input col-7">
+					</div>
+					<div class="form-group">
+						<label for="status" class="label">Status</label>
+						: <select id="status" class="form-input col-7">
+							<option value="open">Open</option>
+							<option value="project1">New </option>
+						  </select>
+					</div>
+					<div class="form-group">
+						<label for="min-experience" class="label">Minimum Experience</label>
+						: <input type="text" name="min-experience" class="form-input col-2"> years
+						<input type="text" name="min-experience" class="form-input col-2"> months
+					</div>
+					<div class="form-group">
+						<label for="max-experience" class="label">Maximum Experience</label>
+						: <input type="text" name="max-experience" class="form-input col-2"> years
+						<input type="text" name="max-experience" class="form-input col-2"> months
+					</div>
+					<div class="form-group">
+						<label for="type" class="label">Type</label>
+						: <select id="type" class="form-input col-7">
+							<option value=""></option>
+							<option value="New">New</option>
+							<option value="replacement">Replacement</option>
+						  </select>
+					</div>
 				</div>
 
 				<div class="inner-form col-sm-6">
 					<div class="form-group">
 							<label for="skills" class="label">Required Skills</label>
-							: <input type="text" name="skills" id="skills" class="form-input col-6">
+							: <input type="text" name="skills" id="skills" class="form-input col-7">
 					</div>
 					<div class="form-group">
 							<label for="duration" class="label">Duration</label>
-							: <input type="text" name="duration" id="duration" class="form-input col-2"> years
-							<input type="text" name="duration" id="duration" class="form-input col-2"> months
+							: <input type="text" name="duration" class="form-input col-2"> years
+							<input type="text" name="duration" class="form-input col-2"> months
 					</div>
 					<div class="form-group">
 							<label for="conversion" class="label">Probability of conversion</label>
-							: <input type="text" name="conversion" id="conversion" class="form-input col-6">
+							: <input type="text" name="conversion" id="conversion" class="form-input col-7">
 					</div>
 					<div class="form-group">
 							<label for="salary" class="label">Salary Range</label>
-							: <input type="text" name="salary" id="salary" class="form-input col-2"> min
-							 <input type="text" name="salary" id="salary" class="form-input col-2"> max
+							: <input type="text" name="salary" class="form-input col-2"> min
+							 &nbsp;&nbsp;<input type="text" name="salary" class="form-input col-2"> max
 					</div>
 					<label class="label text-info">Hiring Team Accessible Fields:</label><br>
 					<div class="form-group">
 							<label for="poc" class="label">Point of Contact</label>
-							: <input type="text" name="poc" id="poc" class="form-input col-6">
+							: <input type="text" name="poc" id="poc" class="form-input col-7">
 					</div>
 					<div class="form-group">
 							<label for="hiring-status" class="label">Hirirng Status</label>
-							: <input type="text" name="hiring-status" id="hiring-status" class="form-input col-6">
+							: <input type="text" name="hiring-status" id="hiring-status" class="form-input col-7">
 					</div>
 					<div class="form-group">
 							<label for="hr-comments" class="label">HR Comments</label>
-							: <input type="text" name="hr-comments" id="hr-comments" class="form-input col-6">
+							: <input type="text" name="hr-comments" id="hr-comments" class="form-input col-7">
 					</div>
 				</div>
 			</div>
 
 			<button type="submit" class="form-button btn btn-primary">Submit</button>
 		</form>
-		
-		
-		
 	</div>
 
 	<script type="text/javascript" src="js/index.js"></script>
