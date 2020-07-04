@@ -54,6 +54,11 @@ table th{
 }
 
 .form-button{
-	position: relative;
-	left: 1000px;
+	right: 0px;
+	position: absolute;
+	bottom: 0px;
+}
+
+.edit-action{
+	text-align: center;
 }

@@ -55,7 +55,7 @@ function showForm(){
 //showForm();
 function showDetails(){
 	hideAll();
-	$(".details-module").show();
+	$(".details-module").toggle();
 }
 
 function editDetails(e){
@@ -81,7 +81,9 @@ function showTable(){
     			<td>${rowData["poc"]}</td>
     			<td>${rowData["hiring-status"]}</td>
     			<td>${rowData["hr-omments"]}</td>
-    			<td id="${rowData["requestId"]}" class="edit-action"><input type="button" value="Action"></td>
+    			<td id="${rowData["requestId"]}" class="edit-action" ><i class="fa fa-bars"></i>
+
+</td>
     		</tr>
     	`);
     $(".edit-action").click(editDetails);
@@ -97,10 +99,13 @@ function loginSubmit(e){
 		sessionStorage.setItem("username", "admin-man");
 		sessionStorage.setItem("password", "admin-man");
 	}
+    else if (username == 'admin-hr' && password == 'admin-hr') {
+        sessionStorage.setItem("isHR", "true");
+        sessionStorage.setItem("username", "admin-hr");
+        sessionStorage.setItem("password", "admin-hr");
+    }
 	else{
-		sessionStorage.setItem("isHR", "true");
-		sessionStorage.setItem("username", "admin-hr");
-		sessionStorage.setItem("password", "admin-hr")
+
 	}
 }
 
