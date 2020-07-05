@@ -63,12 +63,15 @@ function editDetails(e){
 	var reqId = $req.attr("id");
 	console.log("request Id: " + reqId);
 
-  var $tr = $('td').closest('tr');
-  var $new_row = $(`
+  var $tr = $req.closest('tr');
+  var $new_tr = $(`
     <tr>
       <td colspan="9"></td>
     </tr>
     `).insertAfter($tr);
+
+    var $details = $('.details-module').clone().show();
+    $new_tr.find('td').append($details);
 }
 
 function showTable(){
@@ -89,8 +92,9 @@ function showTable(){
                 <td>${rowData["hr-omments"]}</td>
                 <td id="${rowData["requestId"]}" class="edit-action" ><i class="fa fa-bars"></i></td>
             </tr>`)
-    trNew.find('.edit-action').click(editDetails);
     $("table tbody").append(trNew);
+    trNew.find('.edit-action').click(editDetails);
+
   }
 }
 
