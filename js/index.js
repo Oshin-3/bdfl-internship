@@ -59,34 +59,38 @@ function showDetails(){
 }
 
 function editDetails(e){
-	var $req = $(e.target);
+	var $req = $(e.target).closest('td');
 	var reqId = $req.attr("id");
 	console.log("request Id: " + reqId);
+
+  var $tr = $('td').closest('tr');
+  var $new_row = $(`
+    <tr>
+      <td colspan="9"></td>
+    </tr>
+    `).insertAfter($tr);
 }
 
 function showTable(){
-	
+
  	hideAll();
 	$(".table-module").show();
   for(let i=0;i<data.length;i++)
   {
     var rowData = data[i];
-    $("table tbody").append(`
-    		<tr class="tablerow">
-    			<td>${rowData["requestId"]}</td>
-    			<td>${rowData["projectname"]}</td>
-    			<td>${rowData["projectmanager"]}</td>
-    			<td>${rowData["resources"]}</td>
-    			<td>${rowData["status"]}</td>
-    			<td>${rowData["poc"]}</td>
-    			<td>${rowData["hiring-status"]}</td>
-    			<td>${rowData["hr-omments"]}</td>
-    			<td id="${rowData["requestId"]}" class="edit-action" ><i class="fa fa-bars"></i>
-
-</td>
-    		</tr>
-    	`);
-    $(".edit-action").click(editDetails);
+    var trNew= $(`<tr>
+                <td>${rowData["requestId"]}</td>
+                <td>${rowData["projectname"]}</td>
+                <td>${rowData["projectmanager"]}</td>
+                <td>${rowData["resources"]}</td>
+                <td>${rowData["status"]}</td>
+                <td>${rowData["poc"]}</td>
+                <td>${rowData["hiring-status"]}</td>
+                <td>${rowData["hr-omments"]}</td>
+                <td id="${rowData["requestId"]}" class="edit-action" ><i class="fa fa-bars"></i></td>
+            </tr>`)
+    trNew.find('.edit-action').click(editDetails);
+    $("table tbody").append(trNew);
   }
 }
 
@@ -116,6 +120,8 @@ function isLoggedIn(){
 
 $(".login-form").click(loginSubmit);
 
+$(".add-request").click(showForm);
+
 $(function(){
 	if(isLoggedIn()){
 		showTable();
@@ -124,4 +130,3 @@ $(function(){
 		showLogin();
 	}
 });
-

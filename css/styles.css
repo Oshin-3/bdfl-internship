@@ -1,3 +1,4 @@
+
 .module{
 	margin: 20px;
 }
@@ -28,7 +29,7 @@ h5{
 }
 
 
-table th{
+table th, td{
 	text-align: center;
 }
 
@@ -53,12 +54,7 @@ table th{
 	padding: 5px;
 }
 
-.form-button{
-	right: 0px;
+.add-request{
 	position: absolute;
-	bottom: 0px;
-}
-
-.edit-action{
-	text-align: center;
+	right: 250px;
 }
