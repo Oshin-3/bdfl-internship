@@ -33,8 +33,11 @@ table th, td{
 	text-align: center;
 }
 
+.details-module{
+	background-color: #cccc;
+}
+
 .details-content{
-	background-color: #ccc;
 	padding: 15px;
 }
 
@@ -57,4 +60,36 @@ table th, td{
 .add-request{
 	position: absolute;
 	right: 250px;
+}
+
+.btn-history{
+	margin: 2px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	position: relative;
+	left: 800px;
+}
+
+.btn-edit{
+	margin: 2px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	position: relative;
+	left: 800px;
+}
+
+.btn-submit{
+	margin: 2px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	position: relative;
+	left: 900px;
+}
+
+.btn-cancel{
+	margin: 2px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	position: relative;
+	left: 900px;
 }

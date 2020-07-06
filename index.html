@@ -62,7 +62,7 @@
 		<div class="row details-module module">
 			<div class="details-content col-12 col-sm-6">
 				<label class="label">Project Name</label>
-				<label>:Project 1</label><br>
+				<label class="projectname">:Project 1</label><br>
 				<label class="label">Project Manager</label>
 				<label>:Project Manager 1</label><br>
 				<label class="label">Number of Resources</label>
@@ -95,16 +95,19 @@
 				<label class="label">HR Comments</label>
 				<label>:NO comments</label><br>
 			</div>
+			<hr>
+				<button class="btn btn-info btn-history">View History</button>
+				<button class="btn btn-primary btn-edit clone-form">Edit Details</button>
 		</div>
 
-		
+
 		<form class="form-module module">
 			<div class="row">
 				<div class="inner-form col-sm-6">
-					
+
 					<div class="form-group">
 						<label for="projectname" class="label">Project Name</label>
-						: <select id="projectname" class="form-input col-7">
+						: <select id="projectname" class="form-input col-7 projectname">
 							<option value=""></option>
 							<option value="project1">Project 1</option>
 							<option value="project2">Project 2</option>
@@ -113,11 +116,11 @@
 					</div>
 					<div class="form-group">
 						<label for="projectmanager" class="label">Project Manager</label>
-						: <input type="text" name="projectmanager" id="projectmanager" class="form-input col-7">
+						: <input type="text" name="projectmanager" id="projectmanager" class="form-input col-7 projectmanager">
 					</div>
 					<div class="form-group">
 						<label for="resources" class="label">No. of Resources</label>
-						: <input type="number" name="resources" id="resources" class="form-input col-7">
+						: <input type="number" name="resources" id="resources" class="form-input col-7 resources">
 					</div>
 					<div class="form-group">
 						<label for="designation" class="label">Designation</label>
@@ -185,7 +188,8 @@
 				</div>
 			</div>
 			<hr>
-			<button type="submit" class="form-button btn btn-primary">Submit</button>
+			<button type="submit" class="btn btn-primary btn-submit">Submit</button>
+			<button class="btn btn-secondary btn-cancel">Cancel</button>
 		</form>
 	</div>
 
