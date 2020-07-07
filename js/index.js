@@ -1,3 +1,4 @@
+/*obj declaration*/
 var data = [
   {
     "requestId": 1,
@@ -34,6 +35,7 @@ var data = [
   }
 ];
 
+/*Global variable*/
 var selReqObj;
 var $new_tr = $(`
   <tr>
@@ -41,37 +43,24 @@ var $new_tr = $(`
   </tr>
   `);
 
+
 function hideAll(){
 		$(".module").hide();
-	}
-
-	//hideAll();
+	};
 
 function showLogin(){
 	hideAll();
 	$(".login-module").show();
-}
-
-//showTable();
+};
 
 function showForm(){
 	hideAll();
 	$(".form-module").show();
-}
+};
 
-//showForm();
 function showDetails(){
 	$(".details-module").show();
-}
-
-function cloneForm(e){
-  $new_tr.find('.details-module').hide();
-  $('.form-input').css("border-left", "6px solid #28a745")
-  var $formCopy = $('.form-module').clone().show();
-  $new_tr.find('td').append($formCopy);
-  // $formCopy.find('input.projectmanager').val( selReqObj.projectmanager );
-  // $formCopy.find('input.resources').val( selReqObj.resources);
-}
+};
 
 function editDetails(e){
 	var $req = $(e.target).closest('td');
@@ -84,16 +73,31 @@ function editDetails(e){
   var $tr = $req.closest('tr');
   $new_tr.insertAfter($tr);
 
-    showDetails();
-    var $details = $('.details-module');
+    //showDetails();
+    var $details = $('.details-module').clone();
+    $details.addClass('details-copy').show();
     $new_tr.find('td').append($details);
 
     //$('label.projectname').text(selReqObj.projectname);
-}
+    $details.find('.clone-form').click(function(){
+      closeDetails();
+      $new_tr.find('.details-module').hide();
+      $('.form-input').css("border-left", "6px solid #28a745")
+      var $formCopy = $('.form-module').clone();
+      $formCopy.addClass('form-copy').show();
+      $new_tr.find('td').append($formCopy);
+    })
+};
 
 function closeDetails(e){
-  $('.details-module').hide();
-}
+
+  $('div.details-module.details-copy').remove();
+  $('.form-module.form-copy').remove();
+  if(e) {
+      $('table tr td i.close-action').hide();
+      $('table tr td i.edit-action').show();
+    }
+};
 
 function showTable(){
 
@@ -115,13 +119,15 @@ function showTable(){
                   <i class="fa fa-bars edit-action"></i>
                   <i class="fa fa-times close-action"></i>
                 </td>
-            </tr>`)
-    $("table tbody").append(trNew);
+            </tr>`);
+
     trNew.find('.edit-action').click(editDetails);
-    trNew.find('.close-action').hide();
     trNew.find('.close-action').click(closeDetails);
+    trNew.find('.close-action').hide();
+
+    $("table tbody").append(trNew);
   }
-}
+};
 
 function handleIcons($req){
   var $table = $req.closest('table');
@@ -130,8 +136,9 @@ function handleIcons($req){
 
   $req.find('i.close-action').show();
   $req.find('i.edit-action').hide();
-}
 
+  closeDetails();
+};
 
 function loginSubmit(e){
 	var username = $('#username').val();
@@ -150,18 +157,11 @@ function loginSubmit(e){
 	else{
 
 	}
-}
-
+};
 
 function isLoggedIn(){
 	return (sessionStorage.getItem("username") == "admin-man" && sessionStorage.getItem("password") == "admin-man") || (sessionStorage.getItem("username") == "admin-hr" && sessionStorage.getItem("password") == "admin-hr");
-}
-
-$(".login-form").click(loginSubmit);
-
-$(".add-request").click(showForm);
-
-$(".clone-form").click(cloneForm);
+};
 
 $(function(){
 	if(isLoggedIn()){
@@ -171,3 +171,9 @@ $(function(){
 		showLogin();
 	}
 });
+
+$(".login-form").click(loginSubmit);
+
+$(".add-request").click(showForm);
+
+$(".btn-submit").click(showTable);
