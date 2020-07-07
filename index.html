@@ -13,6 +13,8 @@
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 	<script src="js/font-awesome.js"></script>
+	<!-- <script src="//code.jquery.com/jquery.min.js"></script> -->
+	<!-- <script src="js/paginathing.js"></script> -->
 </head>
 <body>
 	<div class="container">
@@ -67,36 +69,36 @@
 				<label class="label">Project Name</label>
 				<label class="projectname">:Project 1</label><br>
 				<label class="label">Project Manager</label>
-				<label>:Project Manager 1</label><br>
+				<label class="projectmanager">:Project Manager 1</label><br>
 				<label class="label">Number of Resources</label>
-				<label>:14</label><br>
+				<label class="resources">:14</label><br>
 				<label class="label">Designation</label>
-				<label>:xyz</label><br>
+				<label class="designation">:xyz</label><br>
 				<label class="label">Status</label>
-				<label>:Open</label><br>
+				<label class="status">:Open</label><br>
 				<label class="label">Minimum Experience</label>
-				<label>:2 Years & 3 Months</label><br>
+				<label class="min-experience">:2 Years & 3 Months</label><br>
 				<label class="label">Maximum Experience</label>
-				<label>:6 Years & 3 Months</label><br>
+				<label class="max-experience">:6 Years & 3 Months</label><br>
 				<label class="label">Type</label>
-				<label>:New</label><br>
+				<label class="type">:New</label><br>
 			</div>
 			<div class="details-content col-12 col-sm-6">
 				<label class="label">Required Skills</label>
-				<label>:Full Stack Developer</label><br>
+				<label class="skills">:Full Stack Developer</label><br>
 				<label class="label">Duration</label>
-				<label>:1 Year & 2 Months</label><br>
+				<label class="duration">:1 Year & 2 Months</label><br>
 				<label class="label">Probability of Conversion</label>
-				<label>:100%</label><br>
+				<label class="probability">:100%</label><br>
 				<label class="label">Salary Range</label>
-				<label>:25K Min. & 50K Max.</label><br><br>
+				<label class="salary">:25K Min. & 50K Max.</label><br><br>
 				<label class="label text-info">Hiring Team Accessible Fields:</label><br>
 				<label class="label">Point of Contact(POC)</label>
-				<label>:ABC</label><br>
+				<label class="poc">:ABC</label><br>
 				<label class="label">Hiring Status</label>
-				<label>:ABZ</label><br>
+				<label class="hirirng-status">:ABZ</label><br>
 				<label class="label">HR Comments</label>
-				<label>:NO comments</label><br>
+				<label class="hr-comments">:NO comments</label><br>
 			</div>
 			<hr>
 				<button class="btn btn-info btn-history">View History</button>
@@ -138,13 +140,13 @@
 					</div>
 					<div class="form-group">
 						<label for="min-experience" class="label">Minimum Experience</label>
-						: <input type="text" name="min-experience" class="form-input col-2"> years
-						<input type="text" name="min-experience" class="form-input col-2"> months
+						: <input type="text" name="min-experience" class="form-input col-2 " id="minYear"> years
+						<input type="text" name="min-experience" class="form-input col-2 " id="minMonth"> months
 					</div>
 					<div class="form-group">
 						<label for="max-experience" class="label">Maximum Experience</label>
-						: <input type="text" name="max-experience" class="form-input col-2"> years
-						<input type="text" name="max-experience" class="form-input col-2"> months
+						: <input type="text" name="max-experience" class="form-input col-2" id="maxYear"> years
+						<input type="text" name="max-experience" class="form-input col-2" id="maxMonth"> months
 					</div>
 					<div class="form-group">
 						<label for="type" class="label">Type</label>
@@ -163,8 +165,8 @@
 					</div>
 					<div class="form-group">
 							<label for="duration" class="label">Duration</label>
-							: <input type="text" name="duration" class="form-input col-2"> years
-							<input type="text" name="duration" class="form-input col-2"> months
+							: <input type="text" name="duration" class="form-input col-2" id="durationYear"> years
+							<input type="text" name="duration" class="form-input col-2" id="durationMonth"> months
 					</div>
 					<div class="form-group">
 							<label for="conversion" class="label">Probability of conversion</label>
@@ -172,8 +174,8 @@
 					</div>
 					<div class="form-group">
 							<label for="salary" class="label">Salary Range</label>
-							: <input type="text" name="salary" class="form-input col-2"> min
-							 &nbsp;&nbsp;<input type="text" name="salary" class="form-input col-2"> max
+							: <input type="text" name="salary" class="form-input col-2" id="salaryMin"> min
+							 &nbsp;&nbsp;<input type="text" name="salary" class="form-input col-2" id="salaryMax"> max
 					</div>
 					<label class="label text-info">Hiring Team Accessible Fields:</label><br>
 					<div class="form-group">
@@ -181,7 +183,7 @@
 							: <input type="text" name="poc" id="poc" class="form-input col-7">
 					</div>
 					<div class="form-group">
-							<label for="hiring-status" class="label">Hirirng Status</label>
+							<label for="hiring-status" class="label">Hiring Status</label>
 							: <input type="text" name="hiring-status" id="hiring-status" class="form-input col-7">
 					</div>
 					<div class="form-group">
