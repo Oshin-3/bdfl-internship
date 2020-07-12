@@ -256,3 +256,67 @@ $(".login-form").click(loginSubmit);
 $(".add-request").click(showForm);
 
 $(".btn-submit").click(showTable);
+
+
+function authenticate(data){
+  $.ajax({
+      "url": "http://localhost:3000/api/authenticate",
+      "method": "POST",
+      "timeout": 0,
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "data": JSON.stringify(data),
+    })
+    .done(function (response) {
+      console.log(response);
+    });
+};
+authenticate({"username":"admin","password":"admin-man"});
+
+function addRequest(data){
+  $.ajax({
+      "url": "http://localhost:3000/api/addRequest",
+      "method": "POST",
+      "timeout": 0,
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "data": JSON.stringify(data),
+    })
+    .done(function (response) {
+      console.log(response);
+    });
+}
+addRequest({"projectname":"Proj-1","projectmanager":"Man-2232"});
+
+function getRequests(){
+  $.ajax({
+      "url": "http://localhost:3000/api/getRequestDetails",
+      "method": "GET",
+      "timeout": 0,
+      "headers": {
+        "Content-Type": "application/json"
+      },
+    })
+    .done(function (response) {
+      console.log(response);
+    });
+}
+getRequests();
+
+function updateRequests(data){
+  $.ajax({
+      "url": "http://localhost:3000/api/updateRequest",
+      "method": "PUT",
+      "timeout": 0,
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "data": JSON.stringify(data),
+    })
+    .done(function (response) {
+      console.log(response);
+    });
+}
+updateRequests({"requestId": "3", "projectname": "Proj-1" ,"projectmanager": "Man-333"});

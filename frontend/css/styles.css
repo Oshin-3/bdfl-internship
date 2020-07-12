@@ -57,39 +57,39 @@ table th, td{
 	padding: 5px;
 }
 
-.add-request{
+/* .add-request{
 	position: absolute;
 	right: 250px;
-}
+} */
 
 .btn-history{
 	margin: 2px;
 	margin-top: 20px;
 	margin-bottom: 20px;
-	position: relative;
-	left: 800px;
+	/* position: relative;
+	left: 800px; */
 }
 
 .btn-edit{
 	margin: 2px;
 	margin-top: 20px;
 	margin-bottom: 20px;
-	position: relative;
-	left: 800px;
+	/* position: relative;
+	left: 800px; */
 }
 
 .btn-submit{
 	margin: 2px;
 	margin-top: 20px;
 	margin-bottom: 20px;
-	position: relative;
-	left: 900px;
+	/* position: relative;
+	left: 900px; */
 }
 
 .btn-cancel{
 	margin: 2px;
 	margin-top: 20px;
 	margin-bottom: 20px;
-	position: relative;
-	left: 900px;
+	/* position: relative;
+	left: 900px; */
 }
