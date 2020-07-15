@@ -36,28 +36,17 @@ app.use(function (req, res, next) {
 app.post("/api/authenticate", (req, res, next) => {
 
   var creds = req.body;
-
-  // let rawdata = fs.readFileSync('../database/credentials.json');
-  // let data = JSON.parse(rawdata);
-  // console.log(data);
-  // var result = data.find(function(obj){
-  //   return (obj.username == creds.username && obj.password == creds.password);
-  // });
-  //
-  // if(result !== undefined){
-  //   res.json({"status": "success"});
-  // }
-  // else {
-  //   res.json({"status": "failure"});
-  // }
-  var sql_cred = `SELECT * FROM hiring_tracker.credentials WHERE credentials.username = '${creds.username}'`;
+  var sql_cred = `SELECT * FROM hiring_tracker.credentials WHERE credentials.username = '${creds.username}' && credentials.password = '${creds.password}'`;
   con.query(sql_cred, function( err, result){
     if (err) {
       throw err;
-      res.json({"status": "failure"});
+
+    }
+    else if (result.length !== 0) {
+      res.json({"status": "success"});
     }
     else {
-      res.json({"status": "success"});
+      res.json({"status": "failure"});
     }
   });
 
@@ -67,18 +56,10 @@ app.post("/api/authenticate", (req, res, next) => {
 app.post("/api/addRequest", (req, res, next) => {
 
   var newReq = req.body;
-
-  // let rawdata = fs.readFileSync('../database/data.json');
-  // let data = JSON.parse(rawdata);
-  //
-  // data.push(newReq);
-  //
-  // let newdata = JSON.stringify(data);
-  // fs.writeFileSync('../database/data.json', newdata);
-  //
-  // res.json({"status": "success"});
-
-  var sql_insert = `INSERT INTO hiring_tracker.hiring_requests (projectname, projectmanager) VALUES ('${newReq.projectname}','${newReq.projectmanager}');`;
+  var sql_insert = `INSERT INTO hiring_tracker.hiring_requests
+                    (projectname, projectmanager, resources, designation, status, minYear, minMonth, maxYear, maxMonth, type, skills, durationYear, durationMonth, probability, salaryMin, salaryMax, poc, hiringStatus, hrComments, actions)
+                    VALUES
+                    ('${newReq.projectname}','${newReq.projectmanager}','${newReq.resources}','${newReq.designation}','${newReq.status}','${newReq.minYear}','${newReq.minMonth}','${newReq.maxYear}','${newReq.maxMonth}','${newReq.type}','${newReq.skills}','${newReq.durationYear}','${newReq.durationMonth}','${newReq.probability}','${newReq.salaryMin}','${newReq.salaryMax}','${newReq.poc}','${newReq.hiringStatus}','${newReq.hrComments}','${newReq.actions}');`;
 
   con.query(sql_insert, function( err, result){
     if (err) {
@@ -107,7 +88,7 @@ app.get("/api/getRequestDetails", (req, res, next) => {
     }
     else {
 
-      res.json({"status": "success"});
+      res.json({result});
     }
   });
 
@@ -140,8 +121,9 @@ app.put("/api/updateRequest", (req, res, next) => {
   // }
   var newReq = req.body;
   var sql_update = `UPDATE hiring_tracker.hiring_requests
-                    SET hiring_requests.projectname = '${newReq.projectname}', hiring_requests.projectmanager = '${newReq.projectmanager}'
-                    WHERE hiring_requests.id = '${newReq.requestId}'`;
+                    SET
+                    hiring_requests.projectname = '${newReq.projectname}', hiring_requests.projectmanager = '${newReq.projectmanager}', hiring_requests.resources = '${newReq.resources}', hiring_requests.designation = '${newReq.designation}', hiring_requests.status = '${newReq.status}', hiring_requests.minYear = '${newReq.minYear}', hiring_requests.minMonth = '${newReq.minMonth}', hiring_requests.maxYear = '${newReq.maxYear}', hiring_requests.maxMonth = '${newReq.maxMonth}', hiring_requests.type = '${newReq.type}', hiring_requests.skills = '${newReq.skills}', hiring_requests.durationYear = '${newReq.durationYear}', hiring_requests.durationMonth = '${newReq.durationMonth}', hiring_requests.probability = '${newReq.probability}', hiring_requests.salaryMin = '${newReq.salaryMin}', hiring_requests.salaryMax = '${newReq.salaryMax}', hiring_requests.poc = '${newReq.poc}', hiring_requests.hiringStatus = '${newReq.hiringStatus}', hiring_requests.hrComments = '${newReq.hrComments}'
+                    WHERE hiring_requests.requestId = '${newReq.requestId}'`;
 
   con.query(sql_update, function( err, result){
     if (err) {
@@ -149,7 +131,7 @@ app.put("/api/updateRequest", (req, res, next) => {
       res.json({"status": "failure"});
     }
     else {
-
+      
       res.json({"status": "success"});
     }
   });

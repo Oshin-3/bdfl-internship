@@ -111,10 +111,12 @@
 		<form class="form-module module">
 			<div class="row">
 				<div class="inner-form col-sm-6">
-
+					<div class="form-group">
+						<label for="requestId" class="label">Request ID  </label> :&nbsp;&nbsp;&nbsp;&nbsp;<label class="requestId"></label>
+					</div>
 					<div class="form-group">
 						<label for="projectname" class="label">Project Name</label>
-						: <select id="projectname" class="form-input col-7 projectname">
+						: <select id="projectname" class="form-input col-7 projectname managerField">
 							<option value=""></option>
 							<option value="project1">Project 1</option>
 							<option value="project2">Project 2</option>
@@ -123,36 +125,37 @@
 					</div>
 					<div class="form-group">
 						<label for="projectmanager" class="label">Project Manager</label>
-						: <input type="text" name="projectmanager" id="projectmanager" class="form-input col-7 projectmanager">
+						: <input type="text" name="projectmanager" id="projectmanager" class="form-input col-7 projectmanager managerField">
 					</div>
 					<div class="form-group">
 						<label for="resources" class="label">No. of Resources</label>
-						: <input type="number" name="resources" id="resources" class="form-input col-7 resources">
+						: <input type="number" name="resources" id="resources" class="form-input col-7 resources managerField">
 					</div>
 					<div class="form-group">
 						<label for="designation" class="label">Designation</label>
-						: <input type="text" name="designation" id="designation" class="form-input col-7">
+						: <input type="text" name="designation" id="designation" class="form-input col-7 managerField">
 					</div>
 					<div class="form-group">
 						<label for="status" class="label">Status</label>
-						: <select id="status" class="form-input col-7">
+						: <select id="status" class="form-input col-7 managerField">
+							<option value=""></option>
 							<option value="open">Open</option>
 							<option value="project1">New </option>
 						  </select>
 					</div>
 					<div class="form-group">
 						<label for="min-experience" class="label">Minimum Experience</label>
-						: <input type="text" name="min-experience" class="form-input col-2 " id="minYear"> years
-						<input type="text" name="min-experience" class="form-input col-2 " id="minMonth"> months
+						: <input type="text" name="min-experience" class="form-input col-2 managerField" id="minYear"> years
+						<input type="text" name="min-experience" class="form-input col-2 managerField" id="minMonth"> months
 					</div>
 					<div class="form-group">
 						<label for="max-experience" class="label">Maximum Experience</label>
-						: <input type="text" name="max-experience" class="form-input col-2" id="maxYear"> years
-						<input type="text" name="max-experience" class="form-input col-2" id="maxMonth"> months
+						: <input type="text" name="max-experience" class="form-input col-2 managerField" id="maxYear"> years
+						<input type="text" name="max-experience" class="form-input col-2 managerField" id="maxMonth"> months
 					</div>
 					<div class="form-group">
 						<label for="type" class="label">Type</label>
-						: <select id="type" class="form-input col-7">
+						: <select id="type" class="form-input col-7 managerField">
 							<option value=""></option>
 							<option value="New">New</option>
 							<option value="replacement">Replacement</option>
@@ -163,39 +166,39 @@
 				<div class="inner-form col-sm-6">
 					<div class="form-group">
 							<label for="skills" class="label">Required Skills</label>
-							: <input type="text" name="skills" id="skills" class="form-input col-7">
+							: <input type="text" name="skills" id="skills" class="form-input col-7 managerField">
 					</div>
 					<div class="form-group">
 							<label for="duration" class="label">Duration</label>
-							: <input type="text" name="duration" class="form-input col-2" id="durationYear"> years
-							<input type="text" name="duration" class="form-input col-2" id="durationMonth"> months
+							: <input type="text" name="duration" class="form-input col-2 managerField" id="durationYear"> years
+							<input type="text" name="duration" class="form-input col-2 managerField" id="durationMonth"> months
 					</div>
 					<div class="form-group">
 							<label for="conversion" class="label">Probability of conversion</label>
-							: <input type="text" name="conversion" id="conversion" class="form-input col-7">
+							: <input type="text" name="conversion" id="conversion" class="form-input col-7 managerField">
 					</div>
 					<div class="form-group">
 							<label for="salary" class="label">Salary Range</label>
-							: <input type="text" name="salary" class="form-input col-2" id="salaryMin"> min
-							 &nbsp;&nbsp;<input type="text" name="salary" class="form-input col-2" id="salaryMax"> max
+							: <input type="text" name="salary" class="form-input col-2 managerField" id="salaryMin"> min
+							 &nbsp;&nbsp;<input type="text" name="salary" class="form-input col-2 managerField" id="salaryMax"> max
 					</div>
 					<label class="label text-info">Hiring Team Accessible Fields:</label><br>
 					<div class="form-group">
 							<label for="poc" class="label">Point of Contact</label>
-							: <input type="text" name="poc" id="poc" class="form-input col-7">
+							: <input type="text" name="poc" id="poc" class="form-input col-7 hrField">
 					</div>
 					<div class="form-group">
 							<label for="hiring-status" class="label">Hiring Status</label>
-							: <input type="text" name="hiring-status" id="hiring-status" class="form-input col-7">
+							: <input type="text" name="hiring-status" id="hiring-status" class="form-input col-7 hrField">
 					</div>
 					<div class="form-group">
 							<label for="hr-comments" class="label">HR Comments</label>
-							: <input type="text" name="hr-comments" id="hr-comments" class="form-input col-7">
+							: <input type="text" name="hr-comments" id="hr-comments" class="form-input col-7 hrField">
 					</div>
 				</div>
 			</div>
 			<hr>
-			<button type="submit" class="btn btn-primary btn-submit offset-sm-9 ">Submit</button>
+			<button class="btn btn-primary btn-submit offset-sm-9 ">Submit</button>
 			<button class="btn btn-light btn-cancel border">Cancel</button>
 		</form>
 	</div>

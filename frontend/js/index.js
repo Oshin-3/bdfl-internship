@@ -1,75 +1,4 @@
-/*obj declaration*/
-var data = [
-  {
-    "requestId": 1,
-    "projectname": "Proj-1",
-    "projectmanager": "Man-1",
-    "resources":4,
-    "designation": "xyz",
-    "status":"open",
-    "minYear": 2,
-    "minMonth": 3,
-    "maxYear": 6,
-    "maxMonth": 2,
-    "type":"Replacement",
-    "skills":"Full Stack Developer",
-    "durationYear":1,
-    "durationMonth": 3,
-    "probability":"100%",
-    "salaryMin":"25K",
-    "salaryMax":"50K",
-    "poc":"HR-1",
-    "hiringStatus":"completed",
-    "hrComments":"ok",
-    "actions":"done"
-  },
-  {
-    "requestId": 2,
-    "projectname": "Proj-2",
-    "projectmanager": "Man-2",
-    "resources":14,
-    "designation": "mno",
-    "status":"new",
-    "minYear": 2,
-    "minMonth": 3,
-    "maxYear": 5,
-    "maxMonth": 2,
-    "type":"New",
-    "skills":"Full Stack Developer",
-    "durationYear":1,
-    "durationMonth": 2,
-    "probability":"80%",
-    "salaryMin":"25K",
-    "salaryMax":"50K",
-    "poc":"HR-2",
-    "hiringStatus":"completed",
-    "hrComments":"ok",
-    "actions":"done"
-  },
-  {
-    "requestId": 3,
-    "projectname": "Proj-3",
-    "projectmanager": "Man-3",
-    "resources":20,
-    "designation": "abc",
-    "status":"open",
-    "minYear": 2,
-    "minMonth": 4,
-    "maxYear": 4,
-    "maxMonth": 2,
-    "type":"New",
-    "skills":"Full Stack Developer",
-    "durationYear":0,
-    "durationMonth": 8,
-    "probability":"100%",
-    "salaryMin":"25K",
-    "salaryMax":"50K",
-    "poc":"HR-3",
-    "hiringStatus":"completed",
-    "hrComments":"ok",
-    "actions":"done"
-  }
-];
+var data =[];
 
 /*Global variable*/
 var selReqObj;
@@ -89,10 +18,34 @@ function showLogin(){
 	$(".login-module").show();
 };
 
-function showForm(){
+function showForm(e){
 	hideAll();
-	$(".form-module").show();
+	var $form = $(".form-module");
+  $form.show();
+  if(e) {
+      $form.find('label[for="requestId"], label.requestId').hide();
+    }
+  handleForm();
 };
+
+function handleForm(){
+  var $form = $(".form-module:visible");
+
+  var $manFields = $form.find('.managerField');
+  var $hrFields = $form.find('.hrField');
+
+  if(isManager()){
+    $hrFields.attr("readonly", "readonly");
+    $('.hrField').css("border", "none");
+  }
+  else if (isHR()) {
+    $manFields.attr("readonly", "readonly");
+    $('.managerField').css("border", "none");
+  }
+  else {
+
+  }
+}
 
 function showDetails(){
 	$(".details-module").show();
@@ -118,13 +71,68 @@ function editDetails(e){
 
     // $('label.projectname').text(selReqObj.projectname);
     $details.find('.clone-form').click(function(){
+      // $new_tr.insertAfter($tr);
       closeDetails();
       $new_tr.find('.details-module').hide();
       $('.form-input').css("border-left", "6px solid #28a745")
       var $formCopy = $('.form-module').clone();
       $formCopy.addClass('form-copy').show();
+      $formCopy.find('label[for="requestId"], label.requestId').show();
+      $formCopy.find('i.close-action').hide();
       $new_tr.find('td').append($formCopy);
+      // $formCopy.find(".btn-submit").click(function(){
+      //   var requestId = $('.requestId').val();
+      //   var projectname = $('#projectname').val();
+      //   var projectmanager = $('#projectmanager').val();
+      //   var resources = $('#resources').val();
+      //   var designation = $('#designation').val();
+      //   var status = $('#status').val();
+      //   var minYear = $('#minYear').val();
+      //   var minMonth = $('#minMonth').val();
+      //   var maxYear = $('#maxYear').val();
+      //   var maxMonth = $('#maxMonth').val();
+      //   var type = $('#type').val();
+      //   var skills = $('#skills').val();
+      //   var durationYear = $('#durationYear').val();
+      //   var durationMonth = $('#durationMonth').val();
+      //   var probability = $('#conversion').val();
+      //   var salaryMin = $('#salaryMin').val();
+      //   var salaryMax = $('#salaryMax').val();
+      //   var poc = $('#poc').val();
+      //   var hiringStatus = $('#hiring-status').val();
+      //   var hrComments = $('#hr-comments').val();
+      //
+      //
+      //     var data ={
+      //       "requestId": requestId,
+      //       "projectname": projectname,
+      //       "projectmanager": projectmanager,
+      //       "resources": resources,
+      //       "designation": designation,
+      //       "status": status,
+      //       "minYear": minYear,
+      //       "minMonth": minMonth,
+      //       "maxYear": maxYear,
+      //       "maxMonth": maxMonth,
+      //       "type": type,
+      //       "skills": skills,
+      //       "durationYear": durationYear,
+      //       "durationMonth": durationMonth,
+      //       "probability": probability,
+      //       "salaryMin": salaryMin,
+      //       "salaryMax": salaryMax,
+      //       "poc": poc,
+      //       "hiringStatus": hiringStatus,
+      //       "hrComments": hrComments
+      //     };
+      //     console.log(selReqObj);
+      //     if (selReqObj && selReqObj.requestId){
+      //       updateRequests(data);
+      //     }
+      //
+      // });
       setEditFormValues();
+      handleForm();
     })
 };
 
@@ -139,9 +147,9 @@ function closeDetails(e){
 };
 
 function showTable(){
-
  	hideAll();
 	$(".table-module").show();
+  getRequests();
   for(let i=0;i<data.length;i++)
   {
     var rowData = data[i];
@@ -180,6 +188,7 @@ function handleIcons($req){
 };
 
 function setDetailsValues(){
+  $('label.requestId').text(selReqObj.requestId);
   $('label.projectname').text(selReqObj.projectname);
   $('label.projectmanager').text(selReqObj.projectmanager);
   $('label.resources').text(selReqObj.resources);
@@ -197,7 +206,7 @@ function setDetailsValues(){
   $('label.hr-comments').text(selReqObj.hrComments);
 }
 
-function setEditFormValues() {
+function setEditFormValues(){
   $('#projectname').val(selReqObj.projectname);
   $('#projectmanager').val(selReqObj.projectmanager);
   $('#resources').val(selReqObj.resources);
@@ -222,25 +231,40 @@ function setEditFormValues() {
 function loginSubmit(e){
 	var username = $('#username').val();
 	var password = $('#password').val();
+  console.log("Login Submitted");
 
-	if (username == 'admin-man' && password == 'admin-man') {
-		sessionStorage.setItem("isManager", "true");
-		sessionStorage.setItem("username", "admin-man");
-		sessionStorage.setItem("password", "admin-man");
-	}
+  var validated = authenticate({"username": username, "password": password});
+
+  if (validated){
+    sessionStorage.setItem("isLoggedIn", "true");
+  	if (username == 'admin-man' && password == 'admin-man') {
+  		sessionStorage.setItem("isManager", "true");
+  	}
     else if (username == 'admin-hr' && password == 'admin-hr') {
-        sessionStorage.setItem("isHR", "true");
-        sessionStorage.setItem("username", "admin-hr");
-        sessionStorage.setItem("password", "admin-hr");
+          sessionStorage.setItem("isHR", "true");
     }
-	else{
+    showTable();
+  }
+  else {
+    alert("Username or Password invalid.")
+    $('#username').val('');
+    $('#password').val('');
+  }
 
-	}
+
 };
 
 function isLoggedIn(){
-	return (sessionStorage.getItem("username") == "admin-man" && sessionStorage.getItem("password") == "admin-man") || (sessionStorage.getItem("username") == "admin-hr" && sessionStorage.getItem("password") == "admin-hr");
+  return sessionStorage.getItem("isLoggedIn") == "true";
 };
+
+function isManager(){
+  return sessionStorage.getItem("isManager") == "true";
+}
+
+function isHR(){
+  return sessionStorage.getItem("isHR") == "true";
+}
 
 $(function(){
 	if(isLoggedIn()){
@@ -251,18 +275,71 @@ $(function(){
 	}
 });
 
-$(".login-form").click(loginSubmit);
+$(".login-btn").click(loginSubmit);
 
 $(".add-request").click(showForm);
 
-$(".btn-submit").click(showTable);
+$(".btn-submit").click(function(){
+  var requestId = $('.requestId').val();
+  var projectname = $('#projectname').val();
+  var projectmanager = $('#projectmanager').val();
+  var resources = $('#resources').val();
+  var designation = $('#designation').val();
+  var status = $('#status').val();
+  var minYear = $('#minYear').val();
+  var minMonth = $('#minMonth').val();
+  var maxYear = $('#maxYear').val();
+  var maxMonth = $('#maxMonth').val();
+  var type = $('#type').val();
+  var skills = $('#skills').val();
+  var durationYear = $('#durationYear').val();
+  var durationMonth = $('#durationMonth').val();
+  var probability = $('#conversion').val();
+  var salaryMin = $('#salaryMin').val();
+  var salaryMax = $('#salaryMax').val();
+  var poc = $('#poc').val();
+  var hiringStatus = $('#hiring-status').val();
+  var hrComments = $('#hr-comments').val();
+
+
+    var data ={
+      "projectname": projectname,
+      "projectmanager": projectmanager,
+      "resources": resources,
+      "designation": designation,
+      "status": status,
+      "minYear": minYear,
+      "minMonth": minMonth,
+      "maxYear": maxYear,
+      "maxMonth": maxMonth,
+      "type": type,
+      "skills": skills,
+      "durationYear": durationYear,
+      "durationMonth": durationMonth,
+      "probability": probability,
+      "salaryMin": salaryMin,
+      "salaryMax": salaryMax,
+      "poc": poc,
+      "hiringStatus": hiringStatus,
+      "hrComments": hrComments
+    };
+
+
+  addRequest(data);
+  // updateRequests(data);
+  hideAll();
+  showTable();
+});
 
 
 function authenticate(data){
+  var result;
+
   $.ajax({
       "url": "http://localhost:3000/api/authenticate",
       "method": "POST",
       "timeout": 0,
+      "async": false,
       "headers": {
         "Content-Type": "application/json"
       },
@@ -270,15 +347,19 @@ function authenticate(data){
     })
     .done(function (response) {
       console.log(response);
+
+      result = response.status == 'success';
     });
+    return result;
 };
-authenticate({"username":"admin","password":"admin-man"});
 
 function addRequest(data){
+  var result;
   $.ajax({
       "url": "http://localhost:3000/api/addRequest",
       "method": "POST",
       "timeout": 0,
+      "async": false,
       "headers": {
         "Content-Type": "application/json"
       },
@@ -286,37 +367,46 @@ function addRequest(data){
     })
     .done(function (response) {
       console.log(response);
+      result = response.status == 'success';
     });
-}
-addRequest({"projectname":"Proj-1","projectmanager":"Man-2232"});
+    return result;
+};
 
+// addRequest({"projectname":"Proj-1","projectmanager":"Man-2232","resources":"4"});
+// //
 function getRequests(){
   $.ajax({
       "url": "http://localhost:3000/api/getRequestDetails",
       "method": "GET",
       "timeout": 0,
+      "async": false,
       "headers": {
         "Content-Type": "application/json"
-      },
+      }
     })
     .done(function (response) {
-      console.log(response);
+      data = response.result;
+      console.log(data);
     });
 }
-getRequests();
-
-function updateRequests(data){
-  $.ajax({
-      "url": "http://localhost:3000/api/updateRequest",
-      "method": "PUT",
-      "timeout": 0,
-      "headers": {
-        "Content-Type": "application/json"
-      },
-      "data": JSON.stringify(data),
-    })
-    .done(function (response) {
-      console.log(response);
-    });
-}
-updateRequests({"requestId": "3", "projectname": "Proj-1" ,"projectmanager": "Man-333"});
+// getRequests();
+//
+// function updateRequests(data){
+//   var result;
+//   $.ajax({
+//       "url": "http://localhost:3000/api/updateRequest",
+//       "method": "PUT",
+//       "timeout": 0,
+//       "async": false,
+//       "headers": {
+//         "Content-Type": "application/json"
+//       },
+//       "data": JSON.stringify(data),
+//     })
+//     .done(function (response) {
+//       console.log(response);
+//       result = response.status == 'success';
+//     });
+//     return result;
+// }
+// updateRequests(data);
