@@ -2,11 +2,7 @@ var data =[];
 
 /*Global variable*/
 var selReqObj;
-var $new_tr = $(`
-  <tr>
-    <td colspan="9" style="text-align: left"></td>
-  </tr>
-  `);
+
 
 
 function hideAll(){
@@ -54,14 +50,17 @@ function showDetails(){
 function editDetails(e){
 	var $req = $(e.target).closest('td');
 	var reqId = $req.attr("id");
-  handleIcons($req);
+
 	console.log("request Id: " + reqId);
-
-  selReqObj = data.find(o => o.requestId == reqId);
-
   var $tr = $req.closest('tr');
-  $new_tr.insertAfter($tr);
+  var $new_tr = $(`
+  <tr>
+    <td colspan="9" style="text-align: left"></td>
+  </tr>
+  `).insertAfter($tr);
 
+  handleIcons($req);
+  selReqObj = data.find(o => o.requestId == reqId);
     //showDetails();
     var $details = $('.details-module').clone();
     $details.addClass('details-copy').show();
@@ -71,8 +70,8 @@ function editDetails(e){
 
     // $('label.projectname').text(selReqObj.projectname);
     $details.find('.clone-form').click(function(){
-      // $new_tr.insertAfter($tr);
-      closeDetails();
+      $new_tr.insertAfter($tr);
+      // closeDetails();
       $new_tr.find('.details-module').hide();
       $('.form-input').css("border-left", "6px solid #28a745")
       var $formCopy = $('.form-module').clone();
@@ -135,8 +134,8 @@ function editDetails(e){
 
 function closeDetails(e){
 
-  $('div.details-module.details-copy').remove();
-  $('.form-module.form-copy').remove();
+  $('.details-module.details-copy').closest('tr').remove();
+  $('.form-module.form-copy').closest('tr').remove();
   if(e) {
       $('table tr td i.close-action').hide();
       $('table tr td i.edit-action').show();

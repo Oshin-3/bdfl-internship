@@ -131,7 +131,7 @@ app.put("/api/updateRequest", (req, res, next) => {
       res.json({"status": "failure"});
     }
     else {
-      
+
       res.json({"status": "success"});
     }
   });
