@@ -25,6 +25,7 @@ function showForm(e){
 };
 
 function handleForm(){
+
   var $form = $(".form-module:visible");
 
   var $manFields = $form.find('.managerField');
@@ -41,6 +42,15 @@ function handleForm(){
   else {
 
   }
+}
+
+function addButton(){
+  var $add = $(".table-module");
+  if (isHR())
+  {
+    $add.find(".add-request").attr("disabled", "disabled");
+  }
+  
 }
 
 function showDetails(){
@@ -145,6 +155,7 @@ function closeDetails(e){
 function showTable(){
  	hideAll();
 	$(".table-module").show();
+  addButton();
   getRequests();
   for(let i=0;i<data.length;i++)
   {
