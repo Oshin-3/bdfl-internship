@@ -17,8 +17,7 @@
 	<script src="js/font-awesome.js"></script>
 	 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.21/datatables.min.css"/>
 	 <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.21/datatables.min.js"></script>
-
-
+		
 </head>
 <body>
 	<div class="container">
@@ -115,7 +114,7 @@
 		</div>
 
 		<!--Form module-->
-		<form class="form-module module" name="form-module">
+		<form class="form-module module" id="form-id" action="">
 			<div class="row">
 				<div class="inner-form col-sm-6">
 					<div class="form-group">
@@ -124,7 +123,7 @@
 					</div>
 					<div class="form-group">
 						<label for="projectname" class="label">Project Name</label>
-						: <select id="projectname" class="form-input col-7 projectname managerField">
+						: <select id="projectname" class="form-input col-7 projectname managerField" required>
 							<option value=""></option>
 							<option value="project1">Project 1</option>
 							<option value="project2">Project 2</option>
@@ -133,11 +132,11 @@
 					</div>
 					<div class="form-group">
 						<label for="projectmanager" class="label">Project Manager</label>
-						: <input type="text" name="projectmanager" id="projectmanager" class="form-input col-7 projectmanager managerField">
+						: <input type="text" name="projectmanager" id="projectmanager" class="form-input col-7 projectmanager managerField" required>
 					</div>
 					<div class="form-group">
 						<label for="resources" class="label">No. of Resources</label>
-						: <input type="number" name="resources" id="resources" class="form-input col-7 resources managerField">
+						: <input type="number" name="resources" id="resources" class="form-input col-7 resources managerField" required>
 					</div>
 					<div class="form-group">
 						<label for="designation" class="label">Designation</label>
@@ -153,13 +152,13 @@
 					</div>
 					<div class="form-group">
 						<label for="min-experience" class="label">Minimum Experience</label>
-						: <input type="text" name="min-experience" class="form-input col-2 managerField" id="minYear"s> years
-						<input type="text" name="min-experience" class="form-input col-2 managerField" id="minMonth"> months
+						: <input type="text" name="min-experience" class="form-input col-2 managerField" id="minYear" required> years
+						<input type="text" name="min-experience" class="form-input col-2 managerField" id="minMonth" required> months
 					</div>
 					<div class="form-group">
 						<label for="max-experience" class="label">Maximum Experience</label>
-						: <input type="text" name="max-experience" class="form-input col-2 managerField" id="maxYear"> years
-						<input type="text" name="max-experience" class="form-input col-2 managerField" id="maxMonth"> months
+						: <input type="text" name="max-experience" class="form-input col-2 managerField" id="maxYear" required> years
+						<input type="text" name="max-experience" class="form-input col-2 managerField" id="maxMonth" required> months
 					</div>
 					<div class="form-group">
 						<label for="type" class="label">Type</label>
@@ -178,8 +177,8 @@
 					</div>
 					<div class="form-group">
 							<label for="duration" class="label">Duration</label>
-							: <input type="text" name="duration" class="form-input col-2 managerField" id="durationYear"> years
-							<input type="text" name="duration" class="form-input col-2 managerField" id="durationMonth"> months
+							: <input type="text" name="duration" class="form-input col-2 managerField" id="durationYear" required> years
+							<input type="text" name="duration" class="form-input col-2 managerField" id="durationMonth" required> months
 					</div>
 					<div class="form-group">
 							<label for="conversion" class="label">Probability of conversion</label>
@@ -206,7 +205,7 @@
 				</div>
 			</div>
 			<hr>
-			<button type="submit" class="btn btn-primary btn-submit offset-sm-9 ">Submit</button>
+			<input type="submit" class="btn btn-primary btn-submit offset-sm-9 " value="Submit">
 			<button class="btn btn-light btn-cancel border">Cancel</button>
 		</form>
 	</div>
@@ -222,6 +221,8 @@
 
 		} );
 	</script>
+
+
 	
 </body>
 </html>

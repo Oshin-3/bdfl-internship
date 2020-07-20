@@ -288,63 +288,61 @@ $(".login-btn").click(loginSubmit);
 $(".add-request").click(showForm);
 
 $(".btn-submit").click(function(){
-  var requestId = $('#requestId').val();
-  var projectname = $('#projectname').val();
-  var projectmanager = $('#projectmanager').val();
-  var resources = $('#resources').val();
-  var designation = $('#designation').val();
-  var status = $('#status').val();
-  var minYear = $('#minYear').val();
-  var minMonth = $('#minMonth').val();
-  var maxYear = $('#maxYear').val();
-  var maxMonth = $('#maxMonth').val();
-  var type = $('#type').val();
-  var skills = $('#skills').val();
-  var durationYear = $('#durationYear').val();
-  var durationMonth = $('#durationMonth').val();
-  var probability = $('#conversion').val();
-  var salaryMin = $('#salaryMin').val();
-  var salaryMax = $('#salaryMax').val();
-  var poc = $('#poc').val();
-  var hiringStatus = $('#hiring-status').val();
-  var hrComments = $('#hr-comments').val();
+
+    var requestId = $('#requestId').val();
+    var projectname = $('#projectname').val();
+    var projectmanager = $('#projectmanager').val();
+    var resources = $('#resources').val();
+    var designation = $('#designation').val();
+    var status = $('#status').val();
+    var minYear = $('#minYear').val();
+    var minMonth = $('#minMonth').val();
+    var maxYear = $('#maxYear').val();
+    var maxMonth = $('#maxMonth').val();
+    var type = $('#type').val();
+    var skills = $('#skills').val();
+    var durationYear = $('#durationYear').val();
+    var durationMonth = $('#durationMonth').val();
+    var probability = $('#conversion').val();
+    var salaryMin = $('#salaryMin').val();
+    var salaryMax = $('#salaryMax').val();
+    var poc = $('#poc').val();
+    var hiringStatus = $('#hiring-status').val();
+    var hrComments = $('#hr-comments').val();
 
 
-    var data ={
-      "projectname": projectname,
-      "projectmanager": projectmanager,
-      "resources": resources,
-      "designation": designation,
-      "status": status,
-      "minYear": minYear,
-      "minMonth": minMonth,
-      "maxYear": maxYear,
-      "maxMonth": maxMonth,
-      "type": type,
-      "skills": skills,
-      "durationYear": durationYear,
-      "durationMonth": durationMonth,
-      "probability": probability,
-      "salaryMin": salaryMin,
-      "salaryMax": salaryMax,
-      "poc": poc,
-      "hiringStatus": hiringStatus,
-      "hrComments": hrComments
-    };
+      var data ={
+        "projectname": projectname,
+        "projectmanager": projectmanager,
+        "resources": resources,
+        "designation": designation,
+        "status": status,
+        "minYear": minYear,
+        "minMonth": minMonth,
+        "maxYear": maxYear,
+        "maxMonth": maxMonth,
+        "type": type,
+        "skills": skills,
+        "durationYear": durationYear,
+        "durationMonth": durationMonth,
+        "probability": probability,
+        "salaryMin": salaryMin,
+        "salaryMax": salaryMax,
+        "poc": poc,
+        "hiringStatus": hiringStatus,
+        "hrComments": hrComments
+      };
 
-
-  addRequest(data);
-  // updateRequests(data);
-  hideAll();
-  showTable();
+      addRequest(data);
+    // showTable();
+  
 });
-
 
 function authenticate(data){
   var result;
 
   $.ajax({
-      "url": "http://localhost:3000/api/authenticate",
+      "url": "http://52.15.174.135:3000/api/authenticate",
       "method": "POST",
       "timeout": 0,
       "async": false,
@@ -364,7 +362,7 @@ function authenticate(data){
 function addRequest(data){
   var result;
   $.ajax({
-      "url": "http://localhost:3000/api/addRequest",
+      "url": "http://52.15.174.135:3000/api/addRequest",
       "method": "POST",
       "timeout": 0,
       "async": false,
@@ -384,7 +382,7 @@ function addRequest(data){
 // //
 function getRequests(){
   $.ajax({
-      "url": "http://localhost:3000/api/getRequestDetails",
+      "url": "http://52.15.174.135:3000/api/getRequestDetails",
       "method": "GET",
       "timeout": 0,
       "async": false,
@@ -402,7 +400,7 @@ function getRequests(){
 function updateRequests(data){
   var result;
   $.ajax({
-      "url": "http://localhost:3000/api/updateRequest",
+      "url": "http://52.15.174.135:3000/api/updateRequest",
       "method": "PUT",
       "timeout": 0,
       "async": false,

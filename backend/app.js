@@ -8,9 +8,9 @@ app.use(bodyParser.json());
 
 var mysql = require('mysql');
 var con = mysql.createConnection({
-  host: "127.0.0.1",
-  user: "root",
-  password: "friends@1137"
+  host: "hiring-tracker.csgmjsgvcgjf.us-east-2.rds.amazonaws.com",
+  user: "admin",
+  password: "friends1137"
 });
 
 con.connect(function(err) {
