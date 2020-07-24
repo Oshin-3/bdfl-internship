@@ -12,3 +12,23 @@ In the existing ERP product of the organization, we can build a new module named
 ```bash
 git clone <url>
 ```
+2. Initailze git
+```bash
+git init
+```
+3. Check git status
+```bash
+git status
+```
+4. Add file to the repository
+```bash
+git add .
+```
+5. Add commit 
+```bash
+git commit -m 'write your commit statement'
+```
+6. Push code to git repository
+```bash
+git push
+```
