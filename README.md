@@ -71,25 +71,25 @@ Download [Putty](https://www.putty.org/) for working on Ubuntu instance created 
 Download [WinSCP](https://winscp.net/eng/download.php) for transfering files from windows machine to Ubuntu instance.
 
 ## Workflow
-•	Hiring module will be a new module added to ERP to which can be navigated through the left side nav bar to the modules.
-•	Users (Managers/HRs) can see a table with the list of all hiring requests (none if no requests). Provision to add a new hiring request through an Add (+) button which navigates to the form.
-•	Only the managers can add a new hiring request and hence the button should be visible/enabled only to the Managers.
-•	On clicking the Add (+) button, a form requesting to fill the required fields will open. 
-•	Once the request is submitted, a notification email triggers to the hiring team of the same with the unique request ID.
-•	One of the persons from hiring team based on the request details will take it up and mention their name as the Point of Contact.
-•	Managers & Hiring team personnel can update the request details based on the requirement changes and status. An edit action button is provided to do the same where the form with the prefilled values will be displayed.
-•	Once the required positions are hired, the request status will be updated to Closed.
+-	Hiring module will be a new module added to ERP to which can be navigated through the left side nav bar to the modules.
+-	Users (Managers/HRs) can see a table with the list of all hiring requests (none if no requests). Provision to add a new hiring request through an Add (+) button which navigates to the form.
+-	Only the managers can add a new hiring request and hence the button should be visible/enabled only to the Managers.
+-	On clicking the Add (+) button, a form requesting to fill the required fields will open. 
+-	Once the request is submitted, a notification email triggers to the hiring team of the same with the unique request ID.
+-	One of the persons from hiring team based on the request details will take it up and mention their name as the Point of Contact.
+-	Managers & Hiring team personnel can update the request details based on the requirement changes and status. An edit action button is provided to do the same where the form with the prefilled values will be displayed.
+-	Once the required positions are hired, the request status will be updated to Closed.
 
 ## Project Development Process
-•	We use GitHub for the version management of the code and for the team collaboration.
-•	The basic tech stack we could use for this module are:
-•	__Frontend:__ HTML5, CSS3, JavaScript, jQuery, Bootstrap, Font Awesome.
-•	__Backend:__ NodeJS, Apache Tomcat.
-•	__Database:__ MySQL.
-•	Team will have the development platform setup on their local machines while contributing their codes through pull requests on GitHub.
-•	A final deployment will be done on a cloud/shared server.
-•	Frontend will be deployed on a web server
-•	Backend will be deployed on the node server itself which exposes the API end points.
-•	Final project is deployed on AWS EC2 instance and RDS instance is connected to MySQL workbench.
+-	We use GitHub for the version management of the code and for the team collaboration.
+-	The basic tech stack we could use for this module are:
+-	__Frontend:__ HTML5, CSS3, JavaScript, jQuery, Bootstrap, Font Awesome.
+-	__Backend:__ NodeJS, Apache Tomcat.
+-	__Database:__ MySQL.
+-	Team will have the development platform setup on their local machines while contributing their codes through pull requests on GitHub.
+-	A final deployment will be done on a cloud/shared server.
+-	Frontend will be deployed on a web server
+-	Backend will be deployed on the node server itself which exposes the API end points.
+-	Final project is deployed on AWS EC2 instance and RDS instance is connected to MySQL workbench.
 
 ## Design 
