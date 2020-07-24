@@ -32,3 +32,7 @@ git commit -m 'write your commit statement'
 ```bash
 git push
 ```
+
+### Font Awesome
+Use [Font Awesome](https://fontawesome.com/) for adding some icons for the application.
+In this application [bars](https://fontawesome.com/icons/bars?style=solid), [times](https://fontawesome.com/icons/times?style=solid) and [plus](https://fontawesome.com/icons/plus?style=solid) icon is used
