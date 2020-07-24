@@ -93,4 +93,15 @@ Download [WinSCP](https://winscp.net/eng/download.php) for transfering files fro
 -	Final project is deployed on AWS EC2 instance and RDS instance is connected to MySQL workbench.
 
 ## Design 
-![Screenshot](Documents/Screenshots/1-Login page.png)
+__Login Page__
+![Login Page](Documents/Screenshots/1-Login%20page.png)
+__Manager Table__
+![Manager Table](Documents/Screenshots/2-Manager%20Table.png)
+__HR Table__
+![HR Table](Documents/Screenshots/3-HR%20Table.png)
+__Add Request Form__
+![Add Request Form](Documents/Screenshots/4-%20Add%20Request%20Form.png)
+__Deatils Module__
+![Details Module](Documents/Screenshots/5-Details%20Module.png)
+__Edit Form__ 
+![Details Module](Documents/Screenshots/6-%20Edit%20Form.png)
