@@ -35,4 +35,33 @@ git push
 
 ### Font Awesome
 Use [Font Awesome](https://fontawesome.com/) for adding some icons for the application.
-In this application [bars](https://fontawesome.com/icons/bars?style=solid), [times](https://fontawesome.com/icons/times?style=solid) and [plus](https://fontawesome.com/icons/plus?style=solid) icon is used
+In this application [bars](https://fontawesome.com/icons/bars?style=solid), [times](https://fontawesome.com/icons/times?style=solid) and [plus](https://fontawesome.com/icons/plus?style=solid) icon is used.
+
+### Node Js 
+Install/ Download [Node.js](https://nodejs.org/en/download/) here.
+1. Check Node.js
+```bash
+node -v
+```
+2. Check npm
+```bash
+npm -v
+```
+3. Initialize npm
+```bash
+npm init
+```
+### Express
+Run following command to install express.
+```bash
+npm install express --save
+```
+### MySQL
+Run following command to install MySQL.
+```bash
+install mysql --save
+```
+### MySQL Workbench
+Download [MySQL Workbench](https://dev.mysql.com/downloads/workbench/) here.
+### Apache Tomcat
+Downlaod [Apache Tomcat](https://tomcat.apache.org/download-80.cgi) here.
