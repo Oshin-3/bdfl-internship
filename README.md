@@ -1,4 +1,5 @@
 # Hiring Tracker
+To run this application click [here](http://52.15.174.135:8080/). 
 
 ## Requirements
 We are facing issues in tracking the hiring requests across the organization for the projects and the responses and status of the same from the hiring team. So, we need a digital platform where the people can request their need of the resources and the hiring team can work on the same while updating the status regularly.
